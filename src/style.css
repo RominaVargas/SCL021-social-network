@@ -11,17 +11,17 @@
   --pink: #f9b0c3;
   --light-grey: #ecedf2;
   --dark-grey: #787883;
-  --accent-purple: #C1BBED;
+  --accent-purple: #c1bbed;
 }
 
 * {
- /* outline: 1px solid limegreen !important;*/
+  /* outline: 1px solid limegreen !important;*/
   margin: 0;
   padding: 0;
   font-family: var(--body-font);
   box-sizing: border-box;
 }
-root{
+root {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,8 +84,7 @@ p {
 a {
   color: var(--dark-purple);
   cursor: pointer;
-  padding:5% 3% 5% 3%;
-
+  padding: 5% 3% 5% 3%;
 }
 .buttonHref {
   width: 100%;
@@ -130,17 +129,17 @@ a {
   align-items: center;
   flex-direction: column;
 }
-.userForm{
+.userForm {
   width: 80%;
 }
-.eyeContainer{
-position: absolute;
-left: 80%;
-top: 39%;
+.eyeContainer {
+  position: absolute;
+  left: 80%;
+  top: 39%;
 }
 
-#openEye{
-display: none;
+#openEye {
+  display: none;
 }
 .buttonsContainer {
   width: 65%;
@@ -204,7 +203,7 @@ display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-   margin-top: 2em;
+  margin-top: 2em;
 }
 input {
   width: 100%;
@@ -246,52 +245,48 @@ input:focus {
   white-space: nowrap;
   margin-bottom: 10%;
 }
-.googleButton{
-background: var(--accent-purple);
-border: none;
-border-radius: 0px 10px 10px 0px;
-
+.googleButton {
+  background: var(--accent-purple);
+  border: none;
+  border-radius: 0px 10px 10px 0px;
 }
-.googleImage{
-width: 47%;
+.googleImage {
+  width: 47%;
 }
 
-.totalButton{
+.totalButton {
   margin-top: 1vh;
   outline: none;
   padding: 2%;
   color: var(--dark-purple);
   font-size: 2rem;
-  background-color:var(--accent-purple);
+  background-color: var(--accent-purple);
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  text-align: center;    
+  text-align: center;
   text-justify: center;
   /*border: 5px solid var(--dark-purple);*/
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 
 .googleLogo {
   background: var(--dark-purple);
   /* width: 30%; */
   display: flex;
- justify-content: center;
- align-items: center;
- border-radius: 10px 0px 0px 10px;
-
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0px 0px 10px;
 }
-.googleContainer{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: row;
-/* border: 5px solid var(--dark-purple);
+.googleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* border: 5px solid var(--dark-purple);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-bottom: 1.2vw solid var(--dark-purple); */
-/*
+  /*
 width: 75%;
 padding: 2.5%;
 border-radius: 20px;
@@ -302,29 +297,29 @@ margin-bottom: 1vh; */
 }
 
 @media (min-width: 900px) {
-.welcomeviewContainer{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
- /* grid-auto-rows: minmax(auto , auto);*/
-}
-.welcomeLoginButton{
-  width: 55%;
-  padding: 2.5%;
-  border-radius: 20px;
-  border-bottom: 0.7vw solid var(--dark-purple);
-  font-size: 2vw;
-  font-weight: 600;
-  margin-top: 20vh;
-  margin-bottom: 0.2vh;
-  cursor: pointer;
-}
-.footer{
-  grid-column: 1 / 3;
-  grid-row: 2;
-  font-size: vw;
-}
-p{
-  font-size: 2vw;
-}
+  .welcomeviewContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    /* grid-auto-rows: minmax(auto , auto);*/
+  }
+  .welcomeLoginButton {
+    width: 55%;
+    padding: 2.5%;
+    border-radius: 20px;
+    border-bottom: 0.7vw solid var(--dark-purple);
+    font-size: 2vw;
+    font-weight: 600;
+    margin-top: 20vh;
+    margin-bottom: 0.2vh;
+    cursor: pointer;
+  }
+  .footer {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    font-size: vw;
+  }
+  p {
+    font-size: 2vw;
+  }
 }
