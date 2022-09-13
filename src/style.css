@@ -132,17 +132,10 @@ a {
 .userForm {
   width: 80%;
 }
-<<<<<<< HEAD
 .eyeContainer {
   position: absolute;
-  left: 80%;
-  top: 39%;
-=======
-.eyeContainer{
-position: absolute;
-left: 78%;
-top: 33.5%;
->>>>>>> 2e002848f2ec0534cf004103128ad7d083253478
+  left: 78%;
+  top: 33.5%;
 }
 
 #openEye {
