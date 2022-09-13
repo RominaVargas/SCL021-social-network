@@ -82,6 +82,7 @@ const signUpView = () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
+    //agregar if que compruebe y linkearlo con p vacio ---  usar return dentro del if
     registerEmailPassword(email, password, confirmPassword);
   });
 
@@ -121,3 +122,5 @@ const signUpView = () => {
   return signUpViewContainer;
 };
 export default signUpView;
+
+//

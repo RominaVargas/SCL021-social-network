@@ -84,7 +84,7 @@ p {
 a {
   color: var(--dark-purple);
   cursor: pointer;
-  padding: 5% 3% 5% 3%;
+  text-align: center;
 }
 .buttonHref {
   width: 100%;
@@ -192,6 +192,9 @@ a {
 .buttonLink {
   width: 50%;
   text-align: center;
+  color: var(--dark-purple);
+  cursor: pointer;
+  padding: 5% 3% 5% 3%;
 }
 .rightButton {
   transform: translateX(98%);
@@ -312,6 +315,25 @@ margin-bottom: 1vh; */
   margin-right: 25%;
 }
 
+.wallView {
+  background: var(--light-grey);
+  max-height: max-content;
+}
+
+.navegationBar {
+  display: flex;
+  max-height: 30%;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  background: var(--light-purple);
+}
+
+.navegationButton {
+  max-width: 35%;
+}
+
 @media (min-width: 900px) {
   .welcomeviewContainer {
     display: grid;
@@ -338,4 +360,23 @@ margin-bottom: 1vh; */
   p {
     font-size: 2vw;
   }
+}
+.welcomeLoginButton {
+  width: 55%;
+  padding: 2.5%;
+  border-radius: 20px;
+  border-bottom: 0.7vw solid var(--dark-purple);
+  font-size: 2vw;
+  font-weight: 600;
+  margin-top: 20vh;
+  margin-bottom: 0.2vh;
+  cursor: pointer;
+}
+.footer {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  font-size: vw;
+}
+p {
+  font-size: 2vw;
 }

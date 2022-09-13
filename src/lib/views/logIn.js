@@ -59,12 +59,12 @@ const logInView = () => {
   inputGroup.className = 'inputGroup';
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('type', 'email');
-  inputEmail.setAttribute('id', 'email');
+  inputEmail.setAttribute('id', 'email2');
   inputEmail.setAttribute('placeholder', 'Correo');
   const inputPassword = document.createElement('input');
   inputPassword.setAttribute('type', 'password');
   inputPassword.setAttribute('placeholder', 'Contraseña');
-  inputPassword.setAttribute('id', 'password');
+  inputPassword.setAttribute('id', 'password2');
 
   // span que contiene ojito para mostar y ocultar contraseña
   const eyeContainer = document.createElement('span');
@@ -101,9 +101,9 @@ const logInView = () => {
   // info para iniciar sesion
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
+    const email = document.getElementById('email2').value;
     console.log({ email });
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('password2').value;
     logInWithEmailAndPassword(email, password);
   });
 

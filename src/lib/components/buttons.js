@@ -4,7 +4,7 @@ export const toggleVissibility = () => {
   try {
     const eyeContainer = document.getElementById('eyeContainer');
     eyeContainer.addEventListener('click', () => {
-      const inputPassword = document.getElementById('password');
+      const inputPassword = document.getElementById('password2');
       const openEye = document.getElementById('openEye');
       const closedEye = document.getElementById('closedEye');
       if (inputPassword.type === 'password') {

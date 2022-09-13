@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 // console.log('error');
 import { app } from './firebase.js';
@@ -23,7 +24,7 @@ const registerEmailPassword = (email, password, confirmPassword) => {
       return user;
     })
     .catch((error) => {
-      // const errorCode = error.code;
+       const errorCode = error.code;
       // const errorMessage = error.message;
       // console.log(user);
       //
@@ -36,7 +37,7 @@ const logInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       // console.log('exito!', result);
-      window.location.hash = '#/home';
+      // window.location.hash = '#/home';
 
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -60,13 +61,13 @@ const logInWithGoogle = () => {
     });
 };
 
-const logInWithEmailAndPassword = (email, password) => {
+const logInWithEmailAndPassword = (email2, password2) => {
   // console.log(email);
   // console.log(password);
-  signInWithEmailAndPassword(auth, email, password)
+  signInWithEmailAndPassword(auth, email2, password2)
     .then((userCredential) => {
       // console.log('sesion iniciada con exito!');
-      window.location.hash = '#/error404';
+      // window.location.hash = '#/home';
       // Signed in
       const user = userCredential.user;
       // ...
@@ -75,14 +76,33 @@ const logInWithEmailAndPassword = (email, password) => {
     .catch((error) => {
       function inputErrors() {
         const inputError = document.getElementById('inputErrors');
-        const email = document.getElementById('email').value;
+        const email = document.getElementById('email2').value;
       }
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
     });
 };
 
-const logOut = async () => {
+const observator = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      window.location.hash = '#/home';
+      console.log('existe usuario activo');
+      const uid = user.uid;
+    } else {
+      // User is signed out
+      window.location.hash = '#/';
+      console.log('no existe usuario activo');
+      // ...
+    }
+  });
+  
+}
+
+
+const logOut = () => {
   signOut(auth)
     .then(() => {
       console.log('Saliendo...');
@@ -92,7 +112,6 @@ const logOut = async () => {
       // An error happened.
     });
 };
-
 export {
   app,
   auth,
@@ -100,4 +119,5 @@ export {
   logInWithGoogle,
   logInWithEmailAndPassword,
   logOut,
+  observator
 };
