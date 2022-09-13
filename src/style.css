@@ -132,10 +132,17 @@ a {
 .userForm {
   width: 80%;
 }
+<<<<<<< HEAD
 .eyeContainer {
   position: absolute;
   left: 80%;
   top: 39%;
+=======
+.eyeContainer{
+position: absolute;
+left: 78%;
+top: 33.5%;
+>>>>>>> 2e002848f2ec0534cf004103128ad7d083253478
 }
 
 #openEye {
@@ -294,6 +301,22 @@ border-radius: 20px;
 font-size: 5vw;
 font-weight: 600;
 margin-bottom: 1vh; */
+}
+.homeButton {
+  border: 0.3vw solid var(--dark-purple);
+  background: var(--light-purple);
+  color: var(--dark-purple);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 40%;
+  padding: 1.7%;
+  border-radius: 20px;
+  border-bottom: 1.2vw solid var(--dark-purple);
+  font-size: 5vw;
+  font-weight: 600;
+  margin-bottom: 1vh;
+  cursor: pointer;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 @media (min-width: 900px) {

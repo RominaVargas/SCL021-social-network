@@ -67,7 +67,8 @@ const homeView = () => {
   navegationBar.appendChild(profileButtonLink);
   wallViewContainer.appendChild(navegationBar);
 
-  logOutButton.addEventListener('click', () => {
+  logOutButton.addEventListener('click', (e) => {
+    e.preventDefault();
     logOut();
   });
 

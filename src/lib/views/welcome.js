@@ -27,8 +27,9 @@ const welcomeView = () => {
   // NO OLVIDAR QUITAR ESTE BOTON!
   const homeButtonLink = document.createElement('a');
   homeButtonLink.href = '#/';
-  homeButtonLink.className = 'homeButton';
+  homeButtonLink.className = 'buttonLink';
   const homeButton = document.createElement('button');
+  homeButton.className = 'homeButton';
   homeButton.innerText = 'home';
   homeButtonLink.appendChild(homeButton);
 
