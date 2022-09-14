@@ -9,6 +9,7 @@ const welcomeView = () => {
   welcomeLogoContainer.appendChild(welcomeLogoImagen);
 
   const welcomeLoginButtonContainer = document.createElement('div');
+  welcomeLoginButtonContainer.className = 'welcomeLoginButtonContainer';
   const welcomeLoginButton = document.createElement('button');
   welcomeLoginButton.className = 'welcomeLoginButton';
   const logInLink = document.createElement('a');
@@ -40,7 +41,7 @@ const welcomeView = () => {
   welcomeViewContainer.appendChild(homeButtonLink);
 
   const footer = document.createElement('p');
-  footer.innerText = '©Copyright 2022';
+  footer.innerText = '©Copyright 2022 Creada por Cami F. Fran R. y Romi V.';
   footer.className = 'footer';
   welcomeViewContainer.appendChild(footer);
 

@@ -3,19 +3,21 @@ import { registerEmailPassword } from '../firebase/auth.js';
 const signUpView = () => {
   // contenedor de la vista completa
   const signUpViewContainer = document.createElement('div');
+  signUpViewContainer.className = 'signUpViewContainer';
   const divForm = document.createElement('div');
   divForm.setAttribute('id', 'formContainer');
   divForm.className = 'formContainer';
   // contenedor del logo
-  const logoContainer = document.createElement('div');
-  logoContainer.className = 'logoContainer';
-  const logoImagen = document.createElement('img');
-  logoImagen.className = 'logoImagen';
-  logoImagen.src = './images/tutipLogo.png';
-  logoContainer.appendChild(logoImagen);
+  const logoContainerSignUp = document.createElement('div');
+  logoContainerSignUp.className = 'logoContainerSignUp';
+  const logoImagenSignUp = document.createElement('img');
+  logoImagenSignUp.className = 'logoImagenSignUp';
+  logoImagenSignUp.src = './images/tutipLogo.png';
+  logoContainerSignUp.appendChild(logoImagenSignUp);
   // contenedor del form
   const wrapper = document.createElement('div');
   wrapper.className = 'wrapper';
+  wrapper.classList.add('wrapperMedia');
   const modalForm = document.createElement('div');
   modalForm.className = 'modalForm';
   const buttonsContainer = document.createElement('div');
@@ -111,13 +113,13 @@ const signUpView = () => {
   homeButtonLink.appendChild(homeButton);
 
   const footer = document.createElement('p');
-  footer.innerText = '©Copyright 2022';
-  footer.className = 'footerView';
+  footer.innerText = '©Copyright 2022 Creada por Cami F. Fran R. y Romi V.';
+  footer.className = 'footer';
   wrapper.appendChild(modalForm);
   wrapper.appendChild(homeButtonLink);
   wrapper.appendChild(footer);
   modalForm.appendChild(userForm);
-  signUpViewContainer.appendChild(logoContainer);
+  signUpViewContainer.appendChild(logoContainerSignUp);
   signUpViewContainer.appendChild(wrapper);
   return signUpViewContainer;
 };

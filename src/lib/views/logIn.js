@@ -9,6 +9,7 @@ import {
 const logInView = () => {
   // contenedor de la vista completa
   const logInViewContainer = document.createElement('div');
+  logInViewContainer.className = 'logInViewContainer';
 
   const divForm = document.createElement('div');
   divForm.setAttribute('id', 'formContainer');
@@ -112,7 +113,7 @@ const logInView = () => {
   form.appendChild(inputGroup);
   form.appendChild(submitButton);
   userForm.appendChild(form);
-
+  
   // boton inicio sesion google
   const googleContainer = document.createElement('div');
   googleContainer.className = 'googleContainer';
@@ -154,14 +155,15 @@ const logInView = () => {
 
   const footer = document.createElement('p');
   footer.innerText = '©Copyright 2022';
-  footer.className = 'footerView';
+  footer.className = 'footer';
   wrapper.appendChild(modalForm);
   wrapper.appendChild(googleContainer);
   wrapper.appendChild(homeButtonLink);
-  wrapper.appendChild(footer);
   modalForm.appendChild(userForm);
   logInViewContainer.appendChild(logoContainer);
   logInViewContainer.appendChild(wrapper);
+  logInViewContainer.appendChild(footer);
+  
 
   return logInViewContainer;
 };

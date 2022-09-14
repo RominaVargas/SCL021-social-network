@@ -15,7 +15,7 @@
 }
 
 * {
-  /* outline: 1px solid limegreen !important;*/
+  /*outline: 1px solid limegreen !important;*/
   margin: 0;
   padding: 0;
   font-family: var(--body-font);
@@ -53,6 +53,7 @@ body {
   align-items: center;
   flex-direction: column;
   text-decoration: none;
+  width: 75%;
 }
 
 .welcomeLoginButtonContainer {
@@ -93,8 +94,17 @@ a {
   align-items: center;
   text-decoration: none;
 }
-.footerView {
+.footer {
   margin-top: 10%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 0;
+  width: 100%;
 }
 
 /* .footer {
@@ -111,6 +121,17 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.logoImagenSignUp {
+  width: 50%;
+}
+
+.logoContainerSignUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .wrapper {
   margin-left: 10%;
   width: 80vw;
@@ -135,7 +156,7 @@ a {
 .eyeContainer {
   position: absolute;
   left: 78%;
-  top: 33.5%;
+  top: 37%;
 }
 
 #openEye {
@@ -314,10 +335,14 @@ margin-bottom: 1vh; */
   margin-left: 25%;
   margin-right: 25%;
 }
-
+/*muro*/
 .wallView {
   background: var(--light-grey);
-  max-height: max-content;
+  height: 90%;
+}
+.navegationBarDiv {
+  background-color: var(--light-grey);
+  height: 750px;
 }
 
 .navegationBar {
@@ -335,12 +360,23 @@ margin-bottom: 1vh; */
 }
 
 @media (min-width: 900px) {
+  body {
+    background: rgb(119, 102, 198);
+    background: linear-gradient(
+      90deg,
+      rgba(119, 102, 198, 1) 0%,
+      rgba(224, 223, 253, 1) 100%
+    );
+  }
+
+  /*welcome*/
   .welcomeviewContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     /* grid-auto-rows: minmax(auto , auto);*/
   }
+
   .welcomeLoginButton {
     width: 55%;
     padding: 2.5%;
@@ -352,31 +388,172 @@ margin-bottom: 1vh; */
     margin-bottom: 0.2vh;
     cursor: pointer;
   }
-  .footer {
-    grid-column: 1 / 3;
-    grid-row: 2;
-    font-size: vw;
+
+  .logInLink {
+    width: 100%;
   }
+
+  .welcomeLoginButtonContainer {
+    height: 100%;
+    margin: 20% 0 20% 0;
+  }
+
+  .homeButton {
+    width: 55%;
+    padding: 0;
+    border-radius: 20px;
+    border-bottom: 0.7vw solid var(--dark-purple);
+    font-size: 2vw;
+    font-weight: 600;
+    margin-top: 20vh;
+    margin-bottom: 0.2vh;
+    cursor: pointer;
+  }
+
+  /* LOG IN */
+  .logInViewContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 70%;
+    justify-content: space-between;
+  }
+
+  .logoImagen {
+    width: 611px;
+    height: 407px;
+    margin: 60% 0 20% 3%;
+  }
+  .logoContainer {
+    width: 100%;
+  }
+
+  .submitButton {
+    width: 70%;
+    font-size: 2vw;
+    border-bottom: 0.7vw solid var(--dark-purple);
+    margin: 0 20% 0 15%;
+    justify-content: center;
+  }
+
+  .wrapper {
+    height: 80%;
+    width: 40%;
+    margin-top: 8%;
+    border-radius: 20px;
+    /*border-bottom: 0.7vw solid var(--dark-purple);*/
+    font-size: 2vw;
+    font-weight: 600;
+    margin-left: 50%;
+    cursor: pointer;
+  }
+
+  .eyeContainer {
+    position: absolute;
+    left: 78%;
+    top: 31%;
+  }
+
+  .buttonLink {
+    height: 100%;
+  }
+
+  .googleContainer {
+    margin-top: 5%;
+  }
+
+  /* SIGN UP*/
+
+  .signUpViewContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  .logoContainerSignUp {
+    height: 70%;
+  }
+  .logoImagenSignUp {
+    width: 611px;
+    height: 407px;
+    margin: 40% 0 20% 3%;
+  }
+
+  .wrapperMedia {
+    height: 70%;
+    width: 40%;
+    /*margin-top: 12%;*/
+    border-radius: 20px;
+    /*border-bottom: 0.7vw solid var(--dark-purple);*/
+    font-size: 2vw;
+    font-weight: 600;
+    margin-left: 50%;
+    cursor: pointer;
+    margin-bottom: -20%;
+  }
+
+  .buttonLink {
+    width: 50%;
+    height: 20%;
+    text-align: center;
+    color: var(--dark-purple);
+    cursor: pointer;
+    padding: 5% 3% 5% 3%;
+  }
+
+  /* HOME*/
+  .wallView {
+    max-height: max-content;
+  }
+
+  .navegationBar {
+    display: flex;
+    max-height: 13%;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    background: var(--light-purple);
+  }
+
+  .navegationButton {
+    max-width: 35%;
+  }
+
+  .logoImagenHome {
+    width: 611px;
+    height: 407px;
+    margin: 40% 0 20% 3%;
+  }
+
+  /* ESTA EN TODOS*/
+
+  .homeButton {
+    width: 55%;
+    padding: 0;
+    border-radius: 20px;
+    border-bottom: 0.7vw solid var(--dark-purple);
+    font-size: 2vw;
+    font-weight: 600;
+    margin-top: 2%;
+    margin-bottom: 0.2vh;
+    cursor: pointer;
+  }
+
+  .footer {
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 0;
+    width: 60%;
+    position: fixed;
+    bottom: 0;
+  }
+
   p {
     font-size: 2vw;
   }
-}
-.welcomeLoginButton {
-  width: 55%;
-  padding: 2.5%;
-  border-radius: 20px;
-  border-bottom: 0.7vw solid var(--dark-purple);
-  font-size: 2vw;
-  font-weight: 600;
-  margin-top: 20vh;
-  margin-bottom: 0.2vh;
-  cursor: pointer;
-}
-.footer {
-  grid-column: 1 / 3;
-  grid-row: 2;
-  font-size: vw;
-}
-p {
-  font-size: 2vw;
 }
