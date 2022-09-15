@@ -3,11 +3,13 @@ import logInView from '../views/logIn.js';
 import signUpView from '../views/signUp.js';
 import error404 from '../views/error404.js';
 import homeView from '../views/home.js';
+import createPostView from '../views/createPost.js';
 import { toggleVissibility } from '../components/buttons.js';
+import { printPost } from '../firebase/auth.js';
+
 // import toggleButton from '../components/buttons.js';
 
-// history push es api jeje
-
+// history push es api jeje  :O
 export const changeRoute = (hash) => {
   const root = document.getElementById('root');
   switch (hash) {
@@ -23,7 +25,12 @@ export const changeRoute = (hash) => {
       break;
     case '#/home':
       root.appendChild(homeView());
+      printPost();
       // closeSession();
+      break;
+    case '#/createPost':
+      root.appendChild(createPostView());
+      // createNewPost();
       break;
     default:
       // console.log('404');

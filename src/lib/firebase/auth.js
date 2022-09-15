@@ -5,13 +5,22 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+
 // console.log('error');
 import { app } from './firebase.js';
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
 
 const registerEmailPassword = (email, password, confirmPassword) => {
   createUserWithEmailAndPassword(auth, email, password, confirmPassword)
@@ -24,7 +33,7 @@ const registerEmailPassword = (email, password, confirmPassword) => {
       return user;
     })
     .catch((error) => {
-       const errorCode = error.code;
+      const errorCode = error.code;
       // const errorMessage = error.message;
       // console.log(user);
       //
@@ -98,9 +107,7 @@ const observator = () => {
       // ...
     }
   });
-  
-}
-
+};
 
 const logOut = () => {
   signOut(auth)
@@ -112,6 +119,39 @@ const logOut = () => {
       // An error happened.
     });
 };
+
+// Creacion de posteos
+const createNewPost = async (titleValue, postValue, placeValue) => {
+  try {
+    console.log(postValue, titleValue, placeValue);
+    const docRef = await addDoc(collection(db, 'tips'), {
+      text: postValue,
+      title: titleValue,
+      place: placeValue,
+    });
+    console.log('Document written with ID: ', docRef.id);
+    document.getElementById('titlePost').value = '';
+    document.getElementById('postArea').value = '';
+    document.getElementById('placePost').value = '';
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
+};
+
+const printPost = async () => {
+  const postDiv = document.getElementById('postContainer');
+  const textPost = document.getElementById('textPostContainer');
+  // const titlePost = document.getElementById('titlePostContainer');
+  const querySnapshot = await getDocs(collection(db, 'tips'));
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data()}`);
+    postDiv.innerHTML += `
+ <h2> ${doc.data().title} </h2>
+ <p> ${doc.data().text}</p>
+ `;
+  });
+};
+
 export {
   app,
   auth,
@@ -119,5 +159,7 @@ export {
   logInWithGoogle,
   logInWithEmailAndPassword,
   logOut,
-  observator
+  observator,
+  createNewPost,
+  printPost,
 };

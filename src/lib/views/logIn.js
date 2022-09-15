@@ -113,7 +113,7 @@ const logInView = () => {
   form.appendChild(inputGroup);
   form.appendChild(submitButton);
   userForm.appendChild(form);
-  
+
   // boton inicio sesion google
   const googleContainer = document.createElement('div');
   googleContainer.className = 'googleContainer';
@@ -163,7 +163,6 @@ const logInView = () => {
   logInViewContainer.appendChild(logoContainer);
   logInViewContainer.appendChild(wrapper);
   logInViewContainer.appendChild(footer);
-  
 
   return logInViewContainer;
 };
