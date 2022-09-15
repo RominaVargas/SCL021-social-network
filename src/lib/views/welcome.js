@@ -20,25 +20,27 @@ const welcomeView = () => {
 
   const signUpText = document.createElement('p');
   signUpText.innerText = '¿No tienes cuenta? ';
+  signUpText.className = 'signUpText';
   const signUpLink = document.createElement('a');
+  signUpLink.className = 'signUpLink';
   signUpLink.innerText = ' Registrate aquí';
   signUpLink.href = '#/signUp';
   signUpText.appendChild(signUpLink);
 
   // NO OLVIDAR QUITAR ESTE BOTON!
-  const homeButtonLink = document.createElement('a');
+/*  const homeButtonLink = document.createElement('a');
   homeButtonLink.href = '#/';
   homeButtonLink.className = 'buttonLink';
   const homeButton = document.createElement('button');
   homeButton.className = 'homeButton';
   homeButton.innerText = 'home';
   homeButtonLink.appendChild(homeButton);
-
+*/
   welcomeLoginButtonContainer.appendChild(logInLink);
   welcomeLoginButtonContainer.appendChild(signUpText);
   welcomeViewContainer.appendChild(welcomeLogoContainer);
   welcomeViewContainer.appendChild(welcomeLoginButtonContainer);
-  welcomeViewContainer.appendChild(homeButtonLink);
+ /* welcomeViewContainer.appendChild(homeButtonLink);*/
 
   const footer = document.createElement('p');
   footer.innerText = '©Copyright 2022 Creada por Cami F. Fran R. y Romi V.';

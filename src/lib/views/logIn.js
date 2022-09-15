@@ -66,20 +66,25 @@ const logInView = () => {
   inputPassword.setAttribute('type', 'password');
   inputPassword.setAttribute('placeholder', 'Contraseña');
   inputPassword.setAttribute('id', 'password2');
+  const inputPlusEye = document.createElement('div');
+  inputPlusEye.className = 'inputPlusEye';
 
   // span que contiene ojito para mostar y ocultar contraseña
-  const eyeContainer = document.createElement('span');
+  const eyeContainer = document.createElement('i');
   eyeContainer.className = 'eyeContainer';
   eyeContainer.setAttribute('id', 'eyeContainer');
   const closedEye = document.createElement('img');
   closedEye.src = './images/closeEye.png';
+  closedEye.className = 'eye';
   const openEye = document.createElement('img');
   openEye.src = './images/openEye.png';
   closedEye.setAttribute('id', 'closedEye');
   openEye.setAttribute('id', 'openEye');
+  openEye.className = 'eye';
   eyeContainer.appendChild(openEye);
   eyeContainer.appendChild(closedEye);
-  inputGroup.appendChild(eyeContainer);
+  inputPlusEye.appendChild(inputPassword)
+  inputPlusEye.appendChild(eyeContainer);
   // toggleVissibility();
   //   let inputPassword = document.getElementById('hiddenPassword');
   //   if (inputPassword.type === "password") {
@@ -108,8 +113,9 @@ const logInView = () => {
     logInWithEmailAndPassword(email, password);
   });
 
+  
   inputGroup.appendChild(inputEmail);
-  inputGroup.appendChild(inputPassword);
+  inputGroup.appendChild(inputPlusEye);
   form.appendChild(inputGroup);
   form.appendChild(submitButton);
   userForm.appendChild(form);
