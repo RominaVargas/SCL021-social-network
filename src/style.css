@@ -152,16 +152,6 @@ body {
 .userForm {
   width: 80%;
 }
-<<<<<<< HEAD
-.eyeContainer {
-  position: absolute;
-  left: 78%;
-  top: 37%;
-}
-
-#openEye {
-  display: none;
-=======
 .inputPlusEye{
 display: flex;
 flex-direction: row;
@@ -174,7 +164,6 @@ gap: 5%;
 #openEye{
 display: none;
 width: 60%;
->>>>>>> 89267da2ad965cab7b0148e73bb6c3b113e1137a
 }
 .buttonsContainer {
   width: 65%;
@@ -359,8 +348,6 @@ margin-bottom: 1vh; */
 }
 
 .navegationBar {
-<<<<<<< HEAD
-=======
 display: flex;
 max-height: 30%;
 justify-content: center;
@@ -570,7 +557,6 @@ align-items: center;
 }
 
 .navegationBar{
->>>>>>> 89267da2ad965cab7b0148e73bb6c3b113e1137a
   display: flex;
   max-height: 30%;
   justify-content: center;
