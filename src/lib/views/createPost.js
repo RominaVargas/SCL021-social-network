@@ -16,7 +16,7 @@ const createPostView = () => {
   titlePost.setAttribute('id', 'titlePost');
 
   const placePost = document.createElement('input');
-  placePost.setAttribute('placeholder', '¿Donde?');
+  placePost.setAttribute('placeholder', '¿Dónde?');
   placePost.setAttribute('id', 'placePost');
 
   const newPostButton = document.createElement('button');

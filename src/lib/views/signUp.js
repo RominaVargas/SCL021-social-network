@@ -113,7 +113,7 @@ const signUpView = () => {
   homeButtonLink.appendChild(homeButton);
 
   const footer = document.createElement('p');
-  footer.innerText = '©Copyright 2022 Creada por Cami F. Fran R. y Romi V.';
+  footer.innerText = '©Copyright 2022';
   footer.className = 'footer';
   wrapper.appendChild(modalForm);
   wrapper.appendChild(homeButtonLink);

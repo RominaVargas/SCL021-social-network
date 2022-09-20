@@ -13,6 +13,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  deleteDoc,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 
 // console.log('error');
@@ -123,7 +124,7 @@ const logOut = () => {
 // Creacion de posteos
 const createNewPost = async (titleValue, postValue, placeValue) => {
   try {
-    console.log(postValue, titleValue, placeValue);
+    console.log(titleValue, postValue, placeValue);
     const docRef = await addDoc(collection(db, 'tips'), {
       text: postValue,
       title: titleValue,
@@ -140,16 +141,49 @@ const createNewPost = async (titleValue, postValue, placeValue) => {
 
 const printPost = async () => {
   const postDiv = document.getElementById('postContainer');
-  const textPost = document.getElementById('textPostContainer');
+  // const textPost = document.getElementById('textPostContainer');
   // const titlePost = document.getElementById('titlePostContainer');
   const querySnapshot = await getDocs(collection(db, 'tips'));
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-    postDiv.innerHTML += `
+    // console.log(`${doc.id} => ${doc.data()}`);
+    window.location.hash = '#/home';
+    // crear un div para cada post
+    const postBox = document.createElement('div');
+    postBox.className = 'postBox';
+    const titlePost = document.createElement('h2');
+    const trashCan = document.createElement('img');
+    trashCan.src = './images/trash.png';
+    trashCan.setAttribute('id', 'trashCan');
+    trashCan.addEventListener('click', (e) => {
+      e.preventDefault();
+      deletePost('${doc.id}');
+    });
+    titlePost.className = 'titlePost';
+    titlePost.innerHTML += `${doc.data().title}`;
+    const descriptionPost = document.createElement('p');
+    descriptionPost.className = 'descriptionPost';
+    descriptionPost.innerHTML += `${doc.data().text}`;
+    postBox.appendChild(trashCan);
+    postBox.appendChild(titlePost);
+    postBox.appendChild(descriptionPost);
+    postDiv.appendChild(postBox);
+    // console.log('solito' + postBox);
+    return postBox;
+
+    // crear un h2
+    // crear un p
+    // retornar
+    /* postDiv.innerHTML += `
  <h2> ${doc.data().title} </h2>
  <p> ${doc.data().text}</p>
- `;
+ `; */
   });
+};
+
+// borrar post
+
+const deletePost = async (id) => {
+  await deleteDoc(doc(db, 'tips', id));
 };
 
 export {
@@ -162,4 +196,5 @@ export {
   observator,
   createNewPost,
   printPost,
+  deletePost,
 };
