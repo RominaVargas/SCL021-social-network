@@ -472,6 +472,37 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
 
   /* LOG IN */
   .logInViewContainer {
+    /* margin-top: 7%;*/
+    padding: 0 0% 9% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logoContainer {
+    width: 50%;
+    text-align: center;
+  }
+
+  .logoImagen {
+    width: 60%;
+  }
+  .buttonsContainer {
+    width: 75%;
+  }
+  .actionButton {
+    font-size: 1.5rem;
+  }
+  .moveButton {
+    font-size: 1.5rem;
+  }
+  .totalButton {
+    font-size: 1.5rem;
+  }
+
+  /* LOG IN */
+  .logInViewContainer {
     margin-top: 7%;
     padding: 0 0% 9% 0%;
     display: flex;
@@ -532,7 +563,7 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
 
   .wrapper {
     margin-top: 5%;
-    margin-bottom: 5%;
+    /*margin-bottom: 5%;*/
     margin-left: 3%;
     height: 70%;
     width: 35%;
@@ -549,8 +580,8 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
   /* SIGN UP*/
 
   .signUpViewContainer {
-    margin-top: 7%;
-    padding: 0 0% 9% 0%;
+    /*margin-top: 7%;*/
+    /*padding: 0 0% 9% 0%;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -590,6 +621,18 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
   /* HOME*/
   .wallView {
     max-height: max-content;
+  }
+  #trashCan {
+    width: 20px;
+  }
+  .navegationBar {
+    display: flex;
+    max-height: 13%;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    background: var(--light-purple);
   }
   #trashCan {
     width: 10px;

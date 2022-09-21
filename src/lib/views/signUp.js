@@ -103,20 +103,20 @@ const signUpView = () => {
   logInLink.href = '#/logIn';
   logInText.appendChild(logInLink);
 
-  // boton home
+  /* boton home
   const homeButtonLink = document.createElement('a');
   homeButtonLink.href = '#/';
   homeButtonLink.className = 'buttonLink';
   const homeButton = document.createElement('button');
   homeButton.className = 'homeButton';
   homeButton.innerText = 'home';
-  homeButtonLink.appendChild(homeButton);
+  homeButtonLink.appendChild(homeButton); */
 
   const footer = document.createElement('p');
   footer.innerText = '©Copyright 2022';
   footer.className = 'footer';
   wrapper.appendChild(modalForm);
-  wrapper.appendChild(homeButtonLink);
+  // wrapper.appendChild(homeButtonLink);
   wrapper.appendChild(footer);
   modalForm.appendChild(userForm);
   signUpViewContainer.appendChild(logoContainerSignUp);

@@ -13,6 +13,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  doc,
   deleteDoc,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 
@@ -153,11 +154,8 @@ const printPost = async () => {
     const titlePost = document.createElement('h2');
     const trashCan = document.createElement('img');
     trashCan.src = './images/trash.png';
-    trashCan.setAttribute('id', 'trashCan');
-    trashCan.addEventListener('click', (e) => {
-      e.preventDefault();
-      deletePost('${doc.id}');
-    });
+    trashCan.setAttribute('id', doc.id);
+    // console.log(trashCan.id)
     titlePost.className = 'titlePost';
     titlePost.innerHTML += `${doc.data().title}`;
     const descriptionPost = document.createElement('p');
@@ -168,7 +166,24 @@ const printPost = async () => {
     postBox.appendChild(descriptionPost);
     postDiv.appendChild(postBox);
     // console.log('solito' + postBox);
-    return postBox;
+    /* const trashCanButton = postDiv.querySelectorAll('#trashCan');
+    //console.log(trashCanButton);
+    trashCanButton.forEach((element) =>{
+      // llamar al target de cada elemento
+      element.addEventListener('click', () => {
+        console.log('aqui se esta borrando');
+       deletePost(doc.id);
+    console.log(element)
+    });
+  }); */
+    const postId = doc.id;
+    trashCan.addEventListener('click', (e) => {
+      e.target.getAttribute(trashCan.id);
+      console.log(e.target);
+      deletePost(e.target);
+    });
+
+    return postDiv;
 
     // crear un h2
     // crear un p
@@ -182,8 +197,9 @@ const printPost = async () => {
 
 // borrar post
 
-const deletePost = async (id) => {
-  await deleteDoc(doc(db, 'tips', id));
+const deletePost = async () => {
+  await deleteDoc(doc(db, 'tips', doc.id));
+  console.log('esta es la funcion de delete post');
 };
 
 export {
