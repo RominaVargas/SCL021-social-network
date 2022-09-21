@@ -153,6 +153,7 @@ const printPost = async () => {
     postBox.className = 'postBox';
     const titlePost = document.createElement('h2');
     const trashCan = document.createElement('img');
+    trashCan.className = 'trashCan';
     trashCan.src = './images/trash.png';
     trashCan.setAttribute('id', doc.id);
     // console.log(trashCan.id)
