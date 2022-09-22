@@ -8,7 +8,6 @@ import {
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 
-<<<<<<< HEAD
 import {
   getFirestore,
   collection,
@@ -16,19 +15,10 @@ import {
   getDocs,
   doc,
   deleteDoc,
+  orderBy,
+  Timestamp,
+  query,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
-=======
-import { 
-  getFirestore, 
-  collection, 
-  addDoc, 
-  getDocs, 
-  doc, 
-  deleteDoc,
- orderBy,
- Timestamp,
- query } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
 
 // console.log('error');
 import { app } from './firebase.js';
@@ -115,7 +105,7 @@ const observator = () => {
       window.location.hash = '#/home';
       console.log('existe usuario activo');
       const uid = user.uid;
-      console.log('uid del usuario en observador: ', uid)
+      console.log('uid del usuario en observador: ', uid);
     } else {
       // User is signed out
       window.location.hash = '#/';
@@ -144,16 +134,11 @@ const createNewPost = async (titleValue, postValue, placeValue) => {
       text: postValue,
       title: titleValue,
       place: placeValue,
-<<<<<<< HEAD
-    });
-    console.log('Document written with ID: ', docRef.id);
-=======
       datePost: Timestamp.fromDate(new Date()),
-      uid: auth.currentUser.uid
-    }); 
+      uid: auth.currentUser.uid,
+    });
     console.log('el user es: ', docRef.uid);
-    console.log("Document written with ID: ", docRef.id);
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
+    console.log('Document written with ID: ', docRef.id);
     document.getElementById('titlePost').value = '';
     document.getElementById('postArea').value = '';
     document.getElementById('placePost').value = '';
@@ -164,17 +149,11 @@ const createNewPost = async (titleValue, postValue, placeValue) => {
 
 const printPost = async () => {
   const postDiv = document.getElementById('postContainer');
-<<<<<<< HEAD
-  // const textPost = document.getElementById('textPostContainer');
-  // const titlePost = document.getElementById('titlePostContainer');
-  const querySnapshot = await getDocs(collection(db, 'tips'));
-=======
-    //Crear una variable que almacene todos los docs ordenados para luego pasarla a querySnapshot
-    const allPosts = query(collection(db, "tips"), orderBy("datePost", "desc"));
+  // Crear una variable que almacene todos los docs ordenados para luego pasarla a querySnapshot
+  const allPosts = query(collection(db, 'tips'), orderBy('datePost', 'desc'));
   const querySnapshot = await getDocs(allPosts);
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
-  querySnapshot.forEach((doc) => {
-     //usar un condicional que diga que el post se muestre de una forma SI el usuario es el mismo que hizo el post 
+  querySnapshot.forEach(doc) => {
+  // usar un condicional que diga que el post se muestre de una forma SI el usuario es el mismo que hizo el post
     window.location.hash = '#/home';
     // crear un div para cada post
     const postBox = document.createElement('div');
@@ -194,14 +173,9 @@ const printPost = async () => {
     postBox.appendChild(titlePost);
     postBox.appendChild(descriptionPost);
     postDiv.appendChild(postBox);
-<<<<<<< HEAD
-    // console.log('solito' + postBox);
-    /* const trashCanButton = postDiv.querySelectorAll('#trashCan');
-=======
     console.log(postBox);
-    /*const trashCanButton = postDiv.querySelectorAll('#trashCan');
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
-    //console.log(trashCanButton);
+    /* const trashCanButton = postDiv.querySelectorAll('#trashCan');
+    // console.log(trashCanButton);
     trashCanButton.forEach((element) =>{
       // llamar al target de cada elemento
       element.addEventListener('click', () => {
@@ -209,13 +183,8 @@ const printPost = async () => {
        deletePost(doc.id);
     console.log(element)
     });
-<<<<<<< HEAD
   }); */
     const postId = doc.id;
-=======
-  });*/
-const postId = doc.id;
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
     trashCan.addEventListener('click', (e) => {
       e.target.getAttribute(trashCan.id);
       console.log(e.target.id);
@@ -236,13 +205,8 @@ const postId = doc.id;
 
 // borrar post
 
-<<<<<<< HEAD
-const deletePost = async () => {
-  await deleteDoc(doc(db, 'tips', doc.id));
-=======
 const deletePost = async (id) => {
-    await deleteDoc(doc(db, "tips", id));
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
+  await deleteDoc(doc(db, 'tips', id));
   console.log('esta es la funcion de delete post');
 };
 

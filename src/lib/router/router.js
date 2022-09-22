@@ -29,15 +29,9 @@ export const changeRoute = (hash) => {
       // closeSession();
       break;
     case '#/createPost':
-<<<<<<< HEAD
       root.appendChild(createPostView());
-      deletePost();
+      // deletePost();
       break;
-=======
-    root.appendChild(createPostView());
-    //deletePost();
-     break;
->>>>>>> 6ec98cae141db16f165ef6f5187824d2ff5f7a3c
     default:
       // console.log('404');
       root.appendChild(error404());
