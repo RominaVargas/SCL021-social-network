@@ -386,6 +386,17 @@ margin-bottom: 1vh; */
   width: 12%;
   margin-left: 85%;
 }
+
+.editIcon {
+  width: 12%;
+  margin-left: 85%;
+}
+
+.likedStar{
+  width: 12%;
+  display: none;
+
+}
 .star {
   width: 12%;
 }
