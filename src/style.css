@@ -76,17 +76,7 @@ body {
   margin-bottom: 1vh;
   cursor: pointer;
 }
-/*p {
-  font-weight: 600;
-  color: var(--dark-grey);
-  font-size: 4vw;
-  text-align: center;
-}*/
-/*a {
-  color: var(--dark-purple);
-  cursor: pointer;
-  text-align: center;
-}*/
+
 .buttonHref {
   width: 100%;
   display: flex;
@@ -107,12 +97,6 @@ body {
   width: 100%;
 }
 
-/* .footer {
-  display: flex;
-  justify-content: center;
-  align-items: bottom;
-  margin-top: 50%;
-} */
 .logoImagen {
   width: 50%;
 }
@@ -167,7 +151,6 @@ body {
 }
 .buttonsContainer {
   width: 65%;
-  /*padding:7% 10% 7% 10%;*/
   background-color: var(--dark-purple);
   margin-top: 2em;
   display: flex;
@@ -178,12 +161,6 @@ body {
   white-space: nowrap;
 }
 .actionButton {
-  /* padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 10%;
-  padding-right: 10%; */
-  /*padding: 3em;*/
-  /*width: 50%;*/
   outline: none;
   border: none;
   background-color: transparent;
@@ -256,9 +233,6 @@ input:focus {
   border: 0.3vw solid var(--dark-purple);
   background: var(--light-purple);
   color: var(--dark-purple);
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
   padding: 2.5%;
@@ -293,7 +267,6 @@ input:focus {
   white-space: nowrap;
   text-align: center;
   text-justify: center;
-  /*border: 5px solid var(--dark-purple);*/
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -310,72 +283,137 @@ input:focus {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  /* border: 5px solid var(--dark-purple);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-bottom: 1.2vw solid var(--dark-purple); */
-  /*
-width: 75%;
-padding: 2.5%;
-border-radius: 20px;
-font-size: 5vw;
-font-weight: 600;
-margin-bottom: 1vh; */
 }
-.homeButton {
+
+/*muro*/
+.logoImagenHome {
+  width: 40%;
+  /*  margin: 40% 0 20% 3%; */
+}
+.logOutButton {
+  /*margin-top: 7%;*/
+  margin-right: 5%;
+  width: 7%;
+  height: 7%;
+}
+
+.wallView {
+  background: var(--light-grey);
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerHomeView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+.navegationBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /*
+position: fixed;
+bottom: 0;
+max-width: 100%;
+max-height: 30%;
+
+
+bottom: 0;*/
+  background: var(--light-purple);
+}
+
+.navegationButton {
+  padding: 3%;
+  max-width: 35%;
+}
+
+.createPostView {
+  padding: 10%;
+}
+.createPostViewHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.createPostViewTitle {
+  font-size: 7vw;
+  font-weight: 900;
+}
+
+.backButton {
+  /* position: absolute;
+  top: 5%;
+  left: 5%;*/
+  width: 30%;
+}
+.formContainer {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.newPostFormContainer {
+  width: 100%;
+  /*margin: 8% 0% 8% 0%;*/
+  background: rgba(224, 223, 253, 0.6);
+  box-shadow: 0px 0px 14px 10px rgba(25, 32, 92, 0.25);
+  border-radius: 10px;
+}
+#postContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#newPostButton {
   border: 0.3vw solid var(--dark-purple);
   background: var(--light-purple);
   color: var(--dark-purple);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 40%;
-  padding: 1.7%;
+  padding: 2.5%;
   border-radius: 20px;
   border-bottom: 1.2vw solid var(--dark-purple);
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 600;
   margin-bottom: 1vh;
   cursor: pointer;
-  margin-left: 25%;
-  margin-right: 25%;
-}
-/*muro*/
-.wallView {
-  background: var(--light-grey);
-  height: 90%;
-}
-.navegationBarDiv {
-  background-color: var(--light-grey);
-  height: auto;
 }
 
-.navegationBar {
+.postClassContainer {
   display: flex;
-  max-height: 30%;
-  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-bottom: 1.2vw solid var(--dark-purple);
   flex-direction: row;
-  position: fixed;
-  bottom: 0;
-  background: var(--light-purple);
-}
-
-.navegationButton {
-  max-width: 35%;
-}
-
-.createPostView {
-  padding: 20% 0 0 25%;
-}
-
-.formContainer {
-  padding: 10%;
-}
-.newPostFormContainer {
-  width: 70%;
-  height: auto;
-  margin: 8% 0% 8% 0%;
-  background: rgba(224, 223, 253, 0.6);
-  box-shadow: 0px 0px 14px 10px rgba(25, 32, 92, 0.25);
-  border-radius: 10px;
   justify-content: center;
+  align-items: center;
+  padding: 2.5%;
+  margin-bottom: 10%;
+}
+
+.categoriesImages {
+  width: 80%;
 }
 
 .postArea {
@@ -383,31 +421,37 @@ margin-bottom: 1vh; */
 }
 
 .trashCan {
-  width: 12%;
-  margin-left: 85%;
+  width: 7%;
 }
 
 .editIcon {
-  width: 12%;
-  margin-left: 85%;
-}
-
-.likedStar{
-  width: 12%;
-  display: none;
-
+  width: 7%;
+  margin-right: 2%;
 }
 .star {
-  width: 12%;
+  width: 7%;
+  margin-right: 2%;
+}
+.starsCount {
+  font-size: 2rem;
+  margin-right: 1%;
+}
+
+/*FORMATO POSTEO*/
+
+.headPost {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  height: 10%;
 }
 
 .postBox {
   margin-top: 5%;
   margin-bottom: 5%;
-  margin-left: 25%;
-  margin-right: 25%;
   height: 70%;
-  width: 35%;
+  width: 70%;
   background: rgba(224, 223, 253, 0.6);
   box-shadow: 0px 0px 14px 10px rgba(25, 32, 92, 0.25);
   border-radius: 10px;
@@ -434,8 +478,6 @@ margin-bottom: 1vh; */
       #7b67dc
     );
     background-attachment: fixed;
-    /* background: rgb(119,102,198);
-background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 100%);*/
   }
 
   /*welcome*/
@@ -491,17 +533,34 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
     width: 100%;
   }
 
-  .homeButton {
-    display: none;
-    /* width: 55%;
-  padding: 0;
-  border-radius: 20px;
-  border-bottom: 0.7vw solid var(--dark-purple);
-  font-size: 2vw;
-  font-weight: 600;
-  margin-top: 20vh;
-  margin-bottom: 0.2vh;
-  cursor: pointer;*/
+  /* LOG IN */
+  .logInViewContainer {
+    padding: 0 0% 9% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logoContainer {
+    width: 50%;
+    text-align: center;
+  }
+
+  .logoImagen {
+    width: 60%;
+  }
+  .buttonsContainer {
+    width: 75%;
+  }
+  .actionButton {
+    font-size: 1.5rem;
+  }
+  .moveButton {
+    font-size: 1.5rem;
+  }
+  .totalButton {
+    font-size: 1.5rem;
   }
 
   /* LOG IN */
@@ -583,8 +642,6 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
   /* SIGN UP*/
 
   .signUpViewContainer {
-    /*margin-top: 7%;*/
-    /*padding: 0 0% 9% 0%;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -611,19 +668,31 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
     cursor: pointer;
   }
 
-  /*.buttonLink {
-  width: 50%;
-  height: 20%;
-  text-align: center;
-  color: var(--dark-purple);
-  cursor: pointer;
-  padding:5% 3% 5% 3%;
-
-}*/
-
   /* HOME*/
   .wallView {
     max-height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerHomeView {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #trashCan {
+    width: 20px;
+  }
+  .navegationBar {
+    display: flex;
+    max-height: 13%;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    background: var(--light-purple);
   }
   #trashCan {
     width: 20px;
@@ -638,28 +707,9 @@ background: linear-gradient(90deg, rgba(119,102,198,1) 0%, rgba(224,223,253,1) 1
     background: var(--light-purple);
   }
 
-  .navegationButton {
-    max-width: 35%;
-  }
-
   .logoImagenHome {
-    width: 611px;
-    height: 407px;
-    margin: 40% 0 20% 3%;
-  }
-
-  /* ESTA EN TODOS*/
-
-  .homeButton {
-    width: 55%;
-    padding: 0;
-    border-radius: 20px;
-    border-bottom: 0.7vw solid var(--dark-purple);
-    font-size: 2vw;
-    font-weight: 600;
-    margin-top: 2%;
-    margin-bottom: 0.2vh;
-    cursor: pointer;
+    width: 10%;
+    /*  margin: 40% 0 20% 3%; */
   }
 
   .footer {

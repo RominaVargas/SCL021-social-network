@@ -5,31 +5,31 @@ const homeView = () => {
   // contenedor de la vista completa del muro
   const wallViewContainer = document.createElement('div');
   wallViewContainer.className = 'wallView';
+  // Contenedor header
+  const headerHomeView = document.createElement('div');
+  headerHomeView.className = 'headerHomeView';
   // logo tutip
   const logoImagen = document.createElement('img');
   logoImagen.className = 'logoImagenHome';
   logoImagen.src = './images/tutipLogo.png';
-  wallViewContainer.appendChild(logoImagen);
-
+  /* wallViewContainer.appendChild(logoImagen); */
   // Boton Cerrar de sesion
   const logOutButtonLink = document.createElement('a');
   logOutButtonLink.href = '/#';
-  const logOutButton = document.createElement('button');
+  const logOutButton = document.createElement('img');
   logOutButton.className = 'logOutButton';
-  logOutButton.innerText = 'Cerrar sesión';
+  logOutButton.src = './images/power128.png';
   logOutButton.setAttribute('id', 'logOutButton');
   logOutButton.setAttribute('type', 'click');
   logOutButtonLink.appendChild(logOutButton);
-  wallViewContainer.appendChild(logOutButton);
+
+  headerHomeView.appendChild(logoImagen);
+  headerHomeView.appendChild(logOutButton);
+
+  wallViewContainer.appendChild(headerHomeView);
 
   const postContainer = document.createElement('div');
   postContainer.setAttribute('id', 'postContainer');
-  /* const titlePostContainer = document.createElement('h2');
-  titlePostContainer.setAttribute('id', 'titlePostContainer');
-  titlePostContainer.innerText = '';
-  const textPostContainer = document.createElement('div');
-  textPostContainer.setAttribute('id', 'textPostContainer');
-  textPostContainer.innerText = ''; */
   wallViewContainer.appendChild(postContainer);
 
   wallViewContainer.appendChild(navBar());

@@ -162,10 +162,18 @@ const printPost = async () => {
     // usar un condicional que diga que el post se muestre de una forma SI el usuario es el mismo que hizo el post
     if (posts.uid === auth.currentUser.uid) {
       window.location.hash = '#/home';
-      // crear un div para cada post
+      //crear un div para cada post
       const postBox = document.createElement('div');
       postBox.className = 'postBox';
+      const headPost = document.createElement('div');
+      headPost.className = 'headPost';
+      headPost.setAttribute('id', `headPost-${doc.id}`);
+      const userName = document.createElement('p');
+      userName.className = 'userName';
+      userName.setAttribute('id', `userName-${doc.id}`);
+
       const titlePost = document.createElement('h2');
+      //PARECE QUE FALTA EL ID DE TITLE.
       const star = document.createElement('img');
       star.className = 'star';
       star.src = './images/sparkles.png';
@@ -190,10 +198,14 @@ const printPost = async () => {
       const descriptionPost = document.createElement('p');
       descriptionPost.className = 'descriptionPost';
       descriptionPost.innerHTML += `${doc.data().text}`;
-      postBox.appendChild(editIcon);
-      postBox.appendChild(trashCan);
-      postBox.appendChild(star);
-      postBox.appendChild(starsCount);
+
+      postBox.appendChild(headPost);
+      headPost.appendChild(userName);
+      headPost.appendChild(starsCount);
+      headPost.appendChild(star);
+      headPost.appendChild(editIcon);
+      headPost.appendChild(trashCan);
+
       postBox.appendChild(titlePost);
       postBox.appendChild(descriptionPost);
       postDiv.appendChild(postBox);
@@ -222,6 +234,12 @@ const printPost = async () => {
       // crear un div para cada post
       const postBox = document.createElement('div');
       postBox.className = 'postBox';
+      const headPost = document.createElement('div');
+      headPost.className = 'headPost';
+      headPost.setAttribute('id', `headPost-${doc.id}`);
+      const userName = document.createElement('p');
+      userName.className = 'userName';
+      userName.setAttribute('id', `userName-${doc.id}`);
       const star = document.createElement('img');
       star.className = 'star';
       star.src = './images/sparkles.png';
@@ -239,8 +257,11 @@ const printPost = async () => {
       const descriptionPost = document.createElement('p');
       descriptionPost.className = 'descriptionPost';
       descriptionPost.innerHTML += `${doc.data().text}`;
-      postBox.appendChild(star);
-      postBox.appendChild(starsCount);
+
+      postBox.appendChild(headPost);
+      headPost.appendChild(userName);
+      headPost.appendChild(starsCount);
+      headPost.appendChild(star);
       postBox.appendChild(titlePost);
       postBox.appendChild(descriptionPost);
       postDiv.appendChild(postBox);
