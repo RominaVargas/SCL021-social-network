@@ -1,7 +1,11 @@
 import { createNewPost, printPost, editPost } from '../firebase/auth.js';
+// Gran contenedor con la funcion de crear posts. Es dinamico.
+// Pagina sin implementar
 const createPostView = () => {
   const createPostViewContainer = document.createElement('div');
   createPostViewContainer.className = 'createPostView';
+
+  // Esto son los botones retroceder y cerrar al crear un nuevo TIP.
   const createPostViewHeader = document.createElement('div');
   createPostViewHeader.className = 'createPostViewHeader';
   const createPostViewTitle = document.createElement('h2');
@@ -15,6 +19,7 @@ const createPostView = () => {
   backButton.className = 'backButton';
   backButtonLink.appendChild(backButton);
 
+  // Div que contiene las categorias para asignarle al post
   const postClassContainer = document.createElement('div');
   postClassContainer.className = 'postClassContainer';
   const discountsClass = document.createElement('div');
@@ -53,12 +58,8 @@ const createPostView = () => {
   const picadasClassImage = document.createElement('img');
   picadasClassImage.src = './images/picada.png';
   picadasClassImage.className = 'categoriesImages';
-  const postArea = document.createElement('textArea');
-  const newPostFormContainer = document.createElement('div');
-  newPostFormContainer.className = 'newPostFormContainer';
-  postArea.className = 'postArea';
-  postArea.setAttribute('id', 'postArea');
-  postArea.setAttribute('placeholder', 'Cuentanos tutip :)');
+
+  // se appenchean los iconos de categorias al div contenedor
   discountsClass.appendChild(discountClassImage);
   placesClass.appendChild(placesClassImage);
   foodClass.appendChild(foodClassImage);
@@ -72,20 +73,34 @@ const createPostView = () => {
   postClassContainer.appendChild(eventsClass);
   postClassContainer.appendChild(picadasClass);
 
+  // Parten los contenedores de imput para escribir tips
+  const newPostFormContainer = document.createElement('div');
+  newPostFormContainer.className = 'newPostFormContainer';
   const formContainer = document.createElement('form');
   formContainer.className = 'formContainer';
+
+  // aquí parte el area de escritura de tip
   const titlePost = document.createElement('input');
   titlePost.setAttribute('placeholder', 'Título del Tip');
   titlePost.setAttribute('id', 'titlePost');
-
+  const postArea = document.createElement('textArea');
+  postArea.className = 'postArea';
+  postArea.setAttribute('id', 'postArea');
+  postArea.setAttribute('placeholder', 'Cuentanos tutip :)');
   const placePost = document.createElement('input');
   placePost.setAttribute('placeholder', '¿Dónde?');
   placePost.setAttribute('id', 'placePost');
 
+  // boton para publicar el tip
   const newPostButton = document.createElement('button');
   newPostButton.setAttribute('id', 'newPostButton');
   newPostButton.innerText = 'Subir Post';
 
+  /* const editPostButton = document.getElementById('newPostButton');
+    console.log('que es:' + editPostButton);
+    editPost(editPostButton); */
+
+  // se apenchea todo
   newPostFormContainer.appendChild(formContainer);
   formContainer.appendChild(titlePost);
   formContainer.appendChild(postArea);
@@ -98,17 +113,18 @@ const createPostView = () => {
   createPostViewContainer.appendChild(postClassContainer);
   createPostViewContainer.appendChild(newPostFormContainer);
 
+  // al hacer clic para publicar un tip, los imputs guardan sus valores en coleccion firebase
   newPostButton.addEventListener('click', (e) => {
     e.preventDefault();
     const titleValue = document.getElementById('titlePost').value;
     const postValue = document.getElementById('postArea').value;
     const placeValue = document.getElementById('placePost').value;
-
     createNewPost(titleValue, postValue, placeValue);
-    printPost();
+    // editPost();
+    /* printPost(); */
     console.log('post creado');
   });
-  editPost();
+
   return createPostViewContainer;
 };
 

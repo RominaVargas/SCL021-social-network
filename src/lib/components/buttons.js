@@ -1,5 +1,6 @@
 // import { logOut } from '../firebase/auth.js';
 
+// Funcion para ver y ocultar contraseña con ojitos. 
 export const toggleVissibility = () => {
   try {
     const eyeContainer = document.getElementById('eyeContainer');
@@ -21,30 +22,3 @@ export const toggleVissibility = () => {
     console.log(error);
   }
 };
-
-/* export const closeSession = () => {
-  try {
-    const clossedSession = document.getElementById('logOut');
-    console.log(clossedSession);
-    clossedSession.addEventListener('click', () => {
-      logOut();
-    });
-  } catch (error) {
-    console.log(error);
-  }
-}; */
-
-// export const toggleButton = () => {
-//     window.addEventListener('load', () => {
-//     const signUpButton = logInView.querySelectorAll('.signUpButton');
-//     const logInButton = logInView.querySelectorAll('.logInButton');
-//     const moveButton = logInView.querySelectorAll('.moveButton');
-// console.log(random);
-//     signUpButton.addEventListener('click', () => {
-//       moveButton.classList.add('rightButton');
-//     });
-//     logInButton.addEventListener('click', () => {
-//       moveButton.classList.remove('rightButton');
-//     });
-//   });
-// };

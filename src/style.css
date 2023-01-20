@@ -31,7 +31,28 @@ root {
 body {
   /*height: 100%;
     width: 100%;*/
-  background-color: var(--light-purple);
+  background: radial-gradient(
+    circle at 10% 10%,
+    #edecff,
+    #eae9fe,
+    #e2e0fd,
+    #d7d4fa,
+    #c9c4f7,
+    #b9b2f3,
+    #aaa0ee,
+    #9b8fe9,
+    #8f7fe4,
+    #8473e0,
+    #7d6add,
+    #7b67dc
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-color: var(--light-purple);*/
+}
+.welcomeviewContainer {
+  padding-bottom: 50%;
+  /*margin-right: 7%;*/
 }
 
 .welcomeLogoContainer {
@@ -85,6 +106,7 @@ body {
   text-decoration: none;
 }
 .footer {
+  font-size: 1.5rem;
   margin-top: 10%;
   position: fixed;
   bottom: 0;
@@ -95,6 +117,22 @@ body {
   align-items: flex-end;
   margin: 0;
   width: 100%;
+}
+.signUpViewContainer {
+  /*margin-right: 7%;*/
+  padding-bottom: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logInViewContainer {
+  /*margin-right: 7%;*/
+  padding-bottom: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logoImagen {
@@ -117,14 +155,14 @@ body {
 }
 
 .wrapper {
-  margin-left: 10%;
   width: 80vw;
-  /*height: 100vh;*/
+  height: 100%;
   background-color: none;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 0 20% 10%;
 }
 .modalForm {
   width: 100%;
@@ -139,15 +177,24 @@ body {
 .inputPlusEye {
   display: flex;
   flex-direction: row;
-  gap: 5%;
+  /*gap: 5%; */
+  /*align-items: baseline;*/
+}
+.eyeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .eye {
   position: relative;
-  width: 70%;
+  width: 100%;
+  /* box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2); */
 }
 #openEye {
   display: none;
-  width: 60%;
+  width: 100%;
+  position: relative;
 }
 .buttonsContainer {
   width: 65%;
@@ -213,16 +260,20 @@ input {
   width: 100%;
   padding: 2vh;
   border: none;
-  background: transparent;
-  border-bottom: 0.3vh solid var(--dark-purple);
+  background: #f0eeff;
+  border-bottom: 0.5vh solid var(--dark-purple);
   box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 5%;
   font-size: 2rem;
 }
 
 input:focus {
-  border-color: #fc83bb;
+  border-color: var(--light-purple);
   outline: none;
+}
+#password2 {
+  width: max-content;
+  box-shadow: none;
 }
 
 .submit {
@@ -246,6 +297,18 @@ input:focus {
   white-space: nowrap;
   margin-bottom: 10%;
 }
+
+.signUpText {
+  margin: 2vw;
+  margin-bottom: 5vh;
+  width: 100%;
+  font-weight: 600;
+  color: var(--dark-grey);
+  font-size: 1.5rem;
+  color: var(--non-black);
+  text-align: center;
+}
+
 .googleButton {
   background: var(--accent-purple);
   border: none;
@@ -285,7 +348,7 @@ input:focus {
   flex-direction: row;
 }
 
-/*muro*/
+/* muro */
 .logoImagenHome {
   width: 40%;
   /*  margin: 40% 0 20% 3%; */
@@ -330,13 +393,13 @@ input:focus {
   bottom: 0;
   width: 100%;
   /*
-position: fixed;
-bottom: 0;
-max-width: 100%;
-max-height: 30%;
+  position: fixed;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 30%;
 
 
-bottom: 0;*/
+  bottom: 0;*/
   background: var(--light-purple);
 }
 
@@ -399,6 +462,9 @@ bottom: 0;*/
   margin-bottom: 1vh;
   cursor: pointer;
 }
+.editButtonHome {
+  display: none;
+}
 
 .postClassContainer {
   display: flex;
@@ -415,9 +481,39 @@ bottom: 0;*/
 .categoriesImages {
   width: 80%;
 }
+#titlePost {
+  width: 100%;
+  padding: 1vh;
+  background: #f0eeff;
+  border-radius: 10px;
+  border: 0.3vh solid var(--dark-purple);
+  box-shadow: 0px 0px 2px rgba(30, 31, 79, 0.2);
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+#placePost {
+  width: 100%;
+  padding: 1vh;
+  background: #f0eeff;
+  border-radius: 10px;
+  border: 0.3vh solid var(--dark-purple);
+  box-shadow: 0px 0px 2px rgba(30, 31, 79, 0.2);
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
 .postArea {
   width: 100%;
+  padding: 1vh;
+  background: #f0eeff;
+  border-radius: 10px;
+  border: 0.3vh solid var(--dark-purple);
+  box-shadow: 0px 0px 2px rgba(30, 31, 79, 0.2);
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .trashCan {
@@ -438,13 +534,29 @@ bottom: 0;*/
 }
 
 /*FORMATO POSTEO*/
+.iconsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
 
+.userName {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.editPostView {
+  width: 100%;
+}
 .headPost {
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: center;
   height: 10%;
+  border-bottom: 0.5vw solid var(--dark-purple);
 }
 
 .postBox {
@@ -458,6 +570,36 @@ bottom: 0;*/
   padding: 3%;
   cursor: pointer;
   word-wrap: break-word;
+}
+
+/* VISTA DE ERROR*/
+.errorViewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
+  padding-bottom: 60%;
+}
+.errorMessageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(224, 223, 253, 0.6);
+  box-shadow: 0px 0px 14px 10px rgb(25 32 92 / 25%);
+  border-radius: 20px;
+  width: 70%;
+}
+.errorImage {
+  width: 50%;
+  padding: 10%;
+}
+.errorTitle {
+  text-align: center;
+}
+.errorText {
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 900px) {
@@ -480,7 +622,7 @@ bottom: 0;*/
     background-attachment: fixed;
   }
 
-  /*welcome*/
+  /* welcome */
   .welcomeviewContainer {
     margin-top: 7%;
     padding: 0 0% 9% 0%;
@@ -538,38 +680,7 @@ bottom: 0;*/
     padding: 0 0% 9% 0%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logoContainer {
-    width: 50%;
-    text-align: center;
-  }
-
-  .logoImagen {
-    width: 60%;
-  }
-  .buttonsContainer {
-    width: 75%;
-  }
-  .actionButton {
-    font-size: 1.5rem;
-  }
-  .moveButton {
-    font-size: 1.5rem;
-  }
-  .totalButton {
-    font-size: 1.5rem;
-  }
-
-  /* LOG IN */
-  .logInViewContainer {
-    /* margin-top: 7%;*/
-    padding: 0 0% 9% 0%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
   }
 
@@ -619,7 +730,7 @@ bottom: 0;*/
     width: 70%;
     font-size: 2vw;
     border-bottom: 0.7vw solid var(--dark-purple);
-    margin: 0 20% 0 15%;
+    margin: 0 20% 5% 15%;
     justify-content: center;
   }
 
@@ -637,14 +748,15 @@ bottom: 0;*/
 
   .googleContainer {
     margin-top: 5%;
+    margin-bottom: 5%;
   }
 
-  /* SIGN UP*/
+  /* SIGN UP */
 
   .signUpViewContainer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
   }
 
@@ -668,7 +780,7 @@ bottom: 0;*/
     cursor: pointer;
   }
 
-  /* HOME*/
+  /* HOME */
   .wallView {
     max-height: max-content;
     display: flex;
@@ -680,36 +792,124 @@ bottom: 0;*/
   .headerHomeView {
     display: flex;
     flex-direction: row;
+    margin-top: 10%;
+  }
+  #newPostButton {
+    border: 0.3vw solid var(--dark-purple);
+    background: var(--light-purple);
+    color: var(--dark-purple);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 20%;
+    padding: 2%;
+    border-radius: 20px;
+    border-bottom: 1vw solid var(--dark-purple);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    white-space: nowrap;
   }
 
   #trashCan {
     width: 20px;
   }
+
+  /* NAV BAR */
+
   .navegationBar {
+    height: 15%;
     display: flex;
-    max-height: 13%;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     position: fixed;
     top: 0;
     background: var(--light-purple);
   }
-  #trashCan {
-    width: 20px;
-  }
-  .navegationBar {
+
+  .navIcon {
     display: flex;
-    max-height: 13%;
+    width: 3%;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
-    position: fixed;
-    top: 0;
-    background: var(--light-purple);
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .iconButtonText {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .navegationButton {
+    padding: 0%;
+    max-width: 100%;
   }
 
   .logoImagenHome {
-    width: 10%;
+    width: 20%;
     /*  margin: 40% 0 20% 3%; */
+  }
+  .logoImagenNav {
+    width: 20%;
+  }
+
+  .logOutButtonNav {
+    width: 30%;
+  }
+
+  .logOutButtonLinkNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* POSTEOS */
+
+  #postContainer {
+    width: 80%;
+    height: 70%;
+  }
+
+  .titlePost {
+    font-size: 2.3em;
+  }
+
+  .postBox {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 70%;
+    width: 80%;
+    background: rgba(224, 223, 253, 0.6);
+    box-shadow: 0px 0px 14px 10px rgba(25, 32, 92, 0.25);
+    border-radius: 10px;
+    padding: 3%;
+    cursor: pointer;
+    word-wrap: break-word;
+  }
+
+  .trashCan {
+    width: 5%;
+  }
+
+  .editIcon {
+    width: 5%;
+    margin-right: 2%;
+  }
+  .star {
+    width: 5%;
+    margin-right: 2%;
+  }
+  .starsCount {
+    font-size: 2rem;
+    margin-right: 1%;
+  }
+  .headPost {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    border-bottom: 0.5vw solid var(--dark-purple);
   }
 
   .footer {
@@ -727,5 +927,33 @@ bottom: 0;*/
 
   p {
     font-size: 2vw;
+  }
+  .errorViewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    padding-bottom: 10%;
+  }
+  .errorMessageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(224, 223, 253, 0.6);
+    box-shadow: 0px 0px 14px 10px rgb(25 32 92 / 25%);
+    border-radius: 20px;
+    width: 50%;
+  }
+  .errorImage {
+    width: 50%;
+    padding: 10%;
+  }
+  .errorTitle,
+  .errorText {
+    text-align: center;
+  }
+  .errorText {
+    font-weight: 600;
   }
 }
