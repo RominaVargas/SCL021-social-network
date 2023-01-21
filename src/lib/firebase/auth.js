@@ -84,18 +84,19 @@ const logInWithEmailAndPassword = (email2, password2) => {
   // console.log(email);
   // console.log(password);
   signInWithEmailAndPassword(auth, email2, password2)
-    // .then((userCredential) => {
-    // console.log('sesion iniciada con exito!');
-    // window.location.hash = '#/home';
-    // Signed in
-    // const user = userCredential.user;
-    // ...
-    // }
+    .then((userCredential) => {
+      // console.log('sesion iniciada con exito!');
+      // window.location.hash = '#/home';
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+
     .catch((error) => {
-      /* function inputErrors() {
+      function inputErrors() {
         const inputError = document.getElementById('inputErrors');
         const email = document.getElementById('email2').value;
-      } */
+      }
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode);

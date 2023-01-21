@@ -6,7 +6,7 @@ import homeView from '../views/home.js';
 import createPostView from '../views/createPost.js';
 import editPostView from '../views/editPost.js';
 import { toggleVissibility } from '../components/buttons.js';
-import { printPost, editPost } from '../firebase/auth.js';
+import { printPost } from '../firebase/auth.js';
 
 // arriba se importan todos las vistas o funciones entre corchetes.
 
