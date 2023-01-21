@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+
 // importacion firebase autenticacion
 import {
   arrayRemove,
@@ -23,6 +24,7 @@ import {
   Timestamp,
   query,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+
 // importacion de firebase datos
 import { app } from './firebase.js';
 
@@ -142,14 +144,13 @@ const logInWithEmailAndPassword = (email2, password2) => {
   // console.log(email);
   // console.log(password);
   signInWithEmailAndPassword(auth, email2, password2)
-    .then((userCredential) => {
-      // console.log('sesion iniciada con exito!');
-      // window.location.hash = '#/home';
-      // Signed in
-      // const user = userCredential.user;
-      // ...
-    })
-
+    // .then((userCredential) => {
+    // console.log('sesion iniciada con exito!');
+    // window.location.hash = '#/home';
+    // Signed in
+    // const user = userCredential.user;
+    // ...
+    // }
     .catch((error) => {
       /* function inputErrors() {
         const inputError = document.getElementById('inputErrors');
