@@ -1,11 +1,9 @@
 import {
   logInWithGoogle,
-  logInWithEmailAndPassword
+  logInWithEmailAndPassword,
 } from '../firebase/auth.js';
-// import { toggleVissibility } from '../components/buttons.js';
-// console.log('login');
 
-// esta es la pantalla para iniciar sesion
+// pantalla para iniciar sesion
 const logInView = () => {
   // contenedor de la vista completa
   const logInViewContainer = document.createElement('div');
@@ -46,7 +44,7 @@ const logInView = () => {
   signUpButton.classList.add('signUpButton');
   signUpButtonLink.appendChild(signUpButton);
   buttonsContainer.appendChild(signUpButtonLink);
-  // boton que se mueve **es el de color lavanda**
+  // boton toggle **es el de color lavanda**
   const moveButton = document.createElement('button');
   moveButton.className = 'moveButton';
   moveButton.innerText = 'Iniciar Sesión';
@@ -85,14 +83,6 @@ const logInView = () => {
   eyeContainer.appendChild(closedEye);
   inputPlusEye.appendChild(inputPassword);
   inputPlusEye.appendChild(eyeContainer);
-  // toggleVissibility();
-  //   let inputPassword = document.getElementById('hiddenPassword');
-  //   if (inputPassword.type === "password") {
-  //     inputPassword.type = "text";
-  //   } else {
-  //     inputPassword.type = "password";
-  //   }
-  // };
 
   const inputErrors = document.createElement('p');
   inputErrors.innerText = '';
@@ -112,14 +102,13 @@ const logInView = () => {
     const password = document.getElementById('password2').value;
     logInWithEmailAndPassword(email, password);
   });
-
+  // apenchacion
   inputGroup.appendChild(inputEmail);
   inputGroup.appendChild(inputPlusEye);
   form.appendChild(inputGroup);
   form.appendChild(submitButton);
   userForm.appendChild(form);
-
-  // boton inicio sesion google
+  // boton google imagen
   const googleContainer = document.createElement('div');
   googleContainer.className = 'googleContainer';
   const googleLogo = document.createElement('div');
@@ -128,7 +117,7 @@ const logInView = () => {
   const googleImage = document.createElement('img');
   googleImage.src = './images/google.png';
   googleImage.className = 'googleImage';
-
+  // boton inicio sesion google
   const googleButton = document.createElement('button');
   googleButton.className = 'googleButton';
   googleButton.innerText = 'Continúa con Google';
@@ -136,34 +125,22 @@ const logInView = () => {
   googleLogo.appendChild(googleImage);
   googleContainer.appendChild(googleLogo);
   googleContainer.appendChild(googleButton);
-  // buttonsContainer.appendChild(googleContainer);
-  // buttonsContainer.appendChild(googleButton);
 
-  // inicio de sesion google
+  // inicio de sesion google con click
   googleButton.addEventListener('click', logInWithGoogle);
-
+  // p bajo link no tienes cuenta
   const signUpText = document.createElement('p');
   signUpText.innerText = '¿No tienes cuenta?';
   const signUpLink = document.createElement('a');
   signUpLink.innerText = 'Registrate aquí';
   signUpLink.href = '#/signUp';
   signUpText.appendChild(signUpLink);
-
-  /* boton home
-  const homeButtonLink = document.createElement('a');
-  homeButtonLink.href = '#/';
-  homeButtonLink.className = 'buttonLink';
-  const homeButton = document.createElement('button');
-  homeButton.className = 'homeButton';
-  homeButton.innerText = 'home';
-  homeButtonLink.appendChild(homeButton); */
-
+  // footer
   const footer = document.createElement('p');
   footer.innerText = '©Copyright 2022 Creada por Cami F. Fran R. y Romi V.';
   footer.className = 'footer';
   wrapper.appendChild(modalForm);
   wrapper.appendChild(googleContainer);
-  // wrapper.appendChild(homeButtonLink);
   modalForm.appendChild(userForm);
   logInViewContainer.appendChild(logoContainer);
   logInViewContainer.appendChild(wrapper);

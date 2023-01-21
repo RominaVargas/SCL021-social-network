@@ -73,21 +73,21 @@ const signUpView = () => {
   submitButton.setAttribute('type', 'submit');
   submitButton.setAttribute('id', 'submitButton');
   submitButton.setAttribute('value', 'Registrate');
-  // submitButton.setAttribute('onclick', signUp());
+
   // boton para crear cuenta
   submitButton.className = 'submitButton';
-  // submitButton.innerText = 'Registrate';
 
-  // info para registrar usuario
+  // cuando hacemos click en enviar se guarda la info de registro de usuario
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
-    // agregar if que compruebe y linkearlo con p vacio ---  usar return dentro del if
+
     registerEmailPassword(email, password, confirmPassword);
   });
 
+  // apenchamos los elementos de la vista Sign Up para ordenar
   inputGroup.appendChild(nameUser);
   inputGroup.appendChild(inputEmail);
   inputGroup.appendChild(inputPassword);
@@ -103,24 +103,17 @@ const signUpView = () => {
   logInLink.href = '#/logIn';
   logInText.appendChild(logInLink);
 
-  /* boton home
-  const homeButtonLink = document.createElement('a');
-  homeButtonLink.href = '#/';
-  homeButtonLink.className = 'buttonLink';
-  const homeButton = document.createElement('button');
-  homeButton.className = 'homeButton';
-  homeButton.innerText = 'home';
-  homeButtonLink.appendChild(homeButton); */
-
+  // Se crea el footer
   const footer = document.createElement('p');
   footer.innerText = '©Copyright 2022';
   footer.className = 'footer';
   wrapper.appendChild(modalForm);
-  // wrapper.appendChild(homeButtonLink);
   wrapper.appendChild(footer);
   modalForm.appendChild(userForm);
   signUpViewContainer.appendChild(logoContainerSignUp);
   signUpViewContainer.appendChild(wrapper);
+
+  // retorna el contenedor de toda la vista
   return signUpViewContainer;
 };
 export default signUpView;

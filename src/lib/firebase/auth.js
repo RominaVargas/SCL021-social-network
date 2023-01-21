@@ -7,7 +7,6 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-
 // importacion firebase autenticacion
 import {
   arrayRemove,
@@ -24,7 +23,6 @@ import {
   Timestamp,
   query,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
-
 // importacion de firebase datos
 import { app } from './firebase.js';
 
@@ -34,64 +32,6 @@ const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
-// borrar post
-
-const deletePost = async (id) => {
-  await deleteDoc(doc(db, 'tips', id));
-  console.log(id);
-};
-
-// funcion para editar posteos
-const editPost = async (id, editTitlePost, editTextPost, editPlacePost) => {
-  const postRef = doc(db, 'tips', id);
-  document.getElementById('titlePost').value = editTitlePost;
-  document.getElementById('postArea').value = editTextPost;
-  document.getElementById('placePost').value = editPlacePost;
-  const editButton = document.getElementById('editButtonHome');
-  console.log(editButton);
-  editButton.addEventListener('click', async () => {
-    const editTitle = document.getElementById('titlePostContainer').value;
-    const editText = document.getElementById('postAreaContainer').value;
-    const editPlace = document.getElementById('placePostContainer').value;
-
-    await updateDoc(postRef, {
-      title: editTitle,
-      text: editText,
-      place: editPlace,
-    });
-  });
-};
-
-// funcion para dar y quitar like
-const likePost = async (id) => {
-  const postId = [id].toString();
-  const userIdentifier = auth.currentUser.uid;
-  const postRef = doc(db, 'tips', postId);
-  const docSnap = await getDoc(postRef);
-  const postData = docSnap.data();
-  const likesCount = postData.starCounter;
-
-  // boton que busca id de la estrella
-  const likeButton = document.getElementById(`star-${id}`);
-  console.log(likeButton);
-  // condicional que si el usuario le da like al boton, quita el like (estrella blanca)
-  if (postData.stars.includes(userIdentifier)) {
-    likeButton.setAttribute('src', './images/sparkles.png');
-    await updateDoc(postRef, {
-      stars: arrayRemove(userIdentifier),
-      // baja el 1 el conteo de likes
-      starCounter: likesCount - 1,
-    });
-  } else {
-    // si la estrella no esta pintada y se da like, se cambia la estrella a negra
-    likeButton.setAttribute('src', './images/sparklesdark.png');
-    await updateDoc(postRef, {
-      stars: arrayUnion(userIdentifier),
-      starCounter: likesCount + 1,
-    });
-  }
-};
-
 // funcion que permite registro con correo
 // pasamos los parametros que necesitemos
 const registerEmailPassword = (email, password, confirmPassword) => {
@@ -100,7 +40,7 @@ const registerEmailPassword = (email, password, confirmPassword) => {
       window.location.hash = '#/home';
       // cuando se registra correctamente, dirige a Home
       const user = userCredential.user;
-      // emailVerification(auth);
+      emailVerification(auth);
       //  esta variable da el id de cada usuario al entrar
       return user;
     })
@@ -122,7 +62,7 @@ const logInWithGoogle = () => {
       // esto da un token de acceso google. Puede usarse  para acceder al Google API
       const credential = GoogleAuthProvider.credentialFromResult(result);
       // const token = credential.accessToken;
-      // const user = result.user;
+      const user = result.user;
       // ...
       return credential;
     })
@@ -382,6 +322,64 @@ const printPost = async () => {
     }
     return postDiv;
   });
+};
+
+// borrar post
+
+const deletePost = async (id) => {
+  await deleteDoc(doc(db, 'tips', id));
+  console.log(id);
+};
+
+// funcion para editar posteos
+const editPost = async (id, editTitle, editText, editPlace) => {
+  const postRef = doc(db, 'tips', id);
+  document.getElementById('titlePost').value = editTitle;
+  document.getElementById('postArea').value = editText;
+  document.getElementById('placePost').value = editPlace;
+  const editButton = document.getElementById('editButtonHome');
+  console.log(editButton);
+  editButton.addEventListener('click', async () => {
+    const editTitle = document.getElementById('titlePostContainer').value;
+    const editText = document.getElementById('postAreaContainer').value;
+    const editPlace = document.getElementById('placePostContainer').value;
+
+    await updateDoc(postRef, {
+      title: editTitle,
+      text: editText,
+      place: editPlace,
+    });
+  });
+};
+
+// funcion para dar y quitar like
+const likePost = async (id) => {
+  const postId = [id].toString();
+  const userIdentifier = auth.currentUser.uid;
+  const postRef = doc(db, 'tips', postId);
+  const docSnap = await getDoc(postRef);
+  const postData = docSnap.data();
+  const likesCount = postData.starCounter;
+
+  // boton que busca id de la estrella
+  const likeButton = document.getElementById(`star-${id}`);
+  console.log(likeButton);
+  // condicional que si el usuario le da like al boton, quita el like (estrella blanca)
+  if (postData.stars.includes(userIdentifier)) {
+    likeButton.setAttribute('src', './images/sparkles.png');
+    await updateDoc(postRef, {
+      stars: arrayRemove(userIdentifier),
+      // baja el 1 el conteo de likes
+      starCounter: likesCount - 1,
+    });
+  } else {
+    // si la estrella no esta pintada y se da like, se cambia la estrella a negra
+    likeButton.setAttribute('src', './images/sparklesdark.png');
+    await updateDoc(postRef, {
+      stars: arrayUnion(userIdentifier),
+      starCounter: likesCount + 1,
+    });
+  }
 };
 
 export {

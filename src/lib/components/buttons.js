@@ -1,6 +1,6 @@
 // import { logOut } from '../firebase/auth.js';
 
-// Funcion para ver y ocultar contraseña con ojitos. 
+// Funcion para ver y ocultar contraseña con ojitos.
 export const toggleVissibility = () => {
   try {
     const eyeContainer = document.getElementById('eyeContainer');

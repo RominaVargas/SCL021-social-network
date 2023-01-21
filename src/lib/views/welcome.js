@@ -1,3 +1,4 @@
+// div padre de todo contiene imagen
 const welcomeView = () => {
   const welcomeViewContainer = document.createElement('div');
   welcomeViewContainer.className = 'welcomeviewContainer';
@@ -7,7 +8,7 @@ const welcomeView = () => {
   welcomeLogoImagen.className = 'welcomeLogoImagen';
   welcomeLogoImagen.src = './images/tutipWithSubtitle.png';
   welcomeLogoContainer.appendChild(welcomeLogoImagen);
-
+  // contenedor boton iniciar sesion
   const welcomeLoginButtonContainer = document.createElement('div');
   welcomeLoginButtonContainer.className = 'welcomeLoginButtonContainer';
   const welcomeLoginButton = document.createElement('button');
@@ -17,7 +18,7 @@ const welcomeView = () => {
   logInLink.className = 'logInLink';
   welcomeLoginButton.innerText = 'Iniciar sesión';
   logInLink.appendChild(welcomeLoginButton);
-
+  // p para registrarse con link bajo el boton
   const signUpText = document.createElement('p');
   signUpText.innerText = '¿No tienes cuenta? ';
   signUpText.className = 'signUpText';
@@ -26,22 +27,12 @@ const welcomeView = () => {
   signUpLink.innerText = ' Registrate aquí';
   signUpLink.href = '#/signUp';
   signUpText.appendChild(signUpLink);
-
-  // NO OLVIDAR QUITAR ESTE BOTON!
-  /*  const homeButtonLink = document.createElement('a');
-  homeButtonLink.href = '#/';
-  homeButtonLink.className = 'buttonLink';
-  const homeButton = document.createElement('button');
-  homeButton.className = 'homeButton';
-  homeButton.innerText = 'home';
-  homeButtonLink.appendChild(homeButton);
-*/
+  // apenchacion
   welcomeLoginButtonContainer.appendChild(logInLink);
   welcomeLoginButtonContainer.appendChild(signUpText);
   welcomeViewContainer.appendChild(welcomeLogoContainer);
   welcomeViewContainer.appendChild(welcomeLoginButtonContainer);
-  /* welcomeViewContainer.appendChild(homeButtonLink); */
-
+  // footer
   const footer = document.createElement('p');
   footer.innerText = '©Copyright 2022 Creada por Cami F. Fran R. y Romi V.';
   footer.className = 'footer';

@@ -8,7 +8,7 @@ import editPostView from '../views/editPost.js';
 import { toggleVissibility } from '../components/buttons.js';
 import { printPost, editPost } from '../firebase/auth.js';
 
-// import toggleButton from '../components/buttons.js';
+// arriba se importan todos las vistas o funciones entre corchetes.
 
 // Se conecta al div ROOT creado en el HTML donde se cargan todas las vistas
 // con el Switch se da la ruta a que vista quiero ir.
@@ -31,7 +31,7 @@ export const changeRoute = (hash) => {
       break;
     case '#/createPost':
       root.appendChild(createPostView());
-      editPost();
+      // editPost();
       break;
     case '#/editPost':
       root.appendChild(editPostView());

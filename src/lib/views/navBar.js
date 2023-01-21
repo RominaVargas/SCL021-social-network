@@ -1,9 +1,7 @@
 import { logOut } from '../firebase/auth.js';
 
 const navBar = () => {
-  // barra de navegación de abajo.
-  /* const navegationBarDiv = document.createElement('div');
-navegationBarDiv.className = 'navegationBarDiv'; */
+  // Contenedor Navbar
   const navegationBar = document.createElement('nav');
   navegationBar.setAttribute('id', 'navegationBar');
   navegationBar.className = 'navegationBar';
@@ -51,41 +49,41 @@ navegationBarDiv.className = 'navegationBarDiv'; */
   const profileButton = document.createElement('img');
   profileButton.className = 'navegationButton';
   profileButton.src = './images/following.png';
+  // apenchacion
   profileButtonLink.appendChild(profileButton);
-
   navegationBar.appendChild(homeButtonLink);
   navegationBar.appendChild(searchButtonLink);
   navegationBar.appendChild(addPostButtonLink);
   navegationBar.appendChild(savedPostButtonLink);
   navegationBar.appendChild(profileButtonLink);
 
-  /* navegationBarDiv.appendChild(navegationBar); */
-
+  // condicinal pantalla desktop
   if (window.matchMedia('(min-width: 991px)').matches) {
     const divIconNav = document.createElement('div');
     divIconNav.class = 'divIconNav';
+    // logo
     const logoImagenNav = document.createElement('img');
     logoImagenNav.className = 'logoImagenNav';
     logoImagenNav.setAttribute('id', 'logoImagenNav');
     logoImagenNav.src = './images/tutipLogo.png';
-    /* wallViewContainer.appendChild(logoImagen); */
     // Boton Cerrar de sesion
     const logOutButtonLinkNav = document.createElement('a');
     logOutButtonLinkNav.href = '/#';
     logOutButtonLinkNav.class = 'logOutButtonLinkNav';
+    // constante cerrar sesion
     const logOutButtonNav = document.createElement('img');
     logOutButtonNav.className = 'logOutButtonNav';
     logOutButtonNav.src = './images/power128.png';
     logOutButtonNav.setAttribute('id', 'logOutButtonNav');
     logOutButtonNav.setAttribute('type', 'click');
     logOutButtonLinkNav.appendChild(logOutButtonNav);
-
+    // boton cerrar sesion
     logOutButtonNav.addEventListener('click', (e) => {
       e.preventDefault();
       logOut();
       console.log('ejecutando logOut desde Nav');
     });
-
+    // navbar
     const homeButtonText = document.createElement('p');
     homeButtonText.innerText = 'Home';
     homeButtonText.className = 'iconButtonText';
@@ -101,7 +99,7 @@ navegationBarDiv.className = 'navegationBarDiv'; */
     const porfileButtonText = document.createElement('p');
     porfileButtonText.innerText = 'Perfil';
     porfileButtonText.className = 'iconButtonText';
-
+    // apenchacion
     navegationBar.appendChild(logoImagenNav);
     homeButtonLink.appendChild(homeButtonText);
     searchButtonLink.appendChild(searchButtonText);
